@@ -31,5 +31,27 @@ So, wanna give it a try? Here's what you need to do:
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
 
+4. **Run the helper script**:
+    ```sh
+    ./backup_brew.sh
+    ```
 
-    
+This script lets you back up and restore your Homebrew packages and categorize installed casks. By default it uses the `fabric` CLI with OpenAI models for categorization. If you'd rather use Azure OpenAI, set these variables before running the script:
+
+```sh
+export AZURE_OPENAI_ENDPOINT="https://your-resource.openai.azure.com"
+export AZURE_OPENAI_DEPLOYMENT="your-deployment-name"
+export AZURE_OPENAI_API_KEY="your-api-key"
+export AZURE_OPENAI_API_VERSION="2024-05-15"
+```
+
+When these variables are set the script will call Azure OpenAI directly. The
+values are saved to `~/.azure_openai_env` so you can reuse them later. Add
+
+```sh
+source ~/.azure_openai_env
+```
+
+to your `~/.bashrc` or `~/.zshrc` to automatically load the settings in every
+terminal. Otherwise the script uses the model defined in `FABRIC_MODEL` (default
+`openai/gpt-4o-mini-2024-07-18`) via Fabric.
