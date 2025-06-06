@@ -11,6 +11,7 @@ Setting up a new macOS environment can be a real drag. I used to spend hours get
 - **Environment Configuration**: Easily manage your environment variables with `.env` files.
 - **Homebrew Automation**: Automate the installation of essential software with `brew install` scripts.
 - **Easy Setup**: Quickly set up a new macOS environment with minimal effort (I hear myself say this a lot when setting up a new machine).
+- **Cask Categorization**: Group your installed casks into categories using Fabric or Azure OpenAI.
 
 ## Getting Started
 
@@ -40,9 +41,9 @@ So, wanna give it a try? Here's what you need to do:
    source .env
    ```
 
-5. **Install the saved software**
+5. **Use the helper script**
 
-   Run the helper script and choose **Restore Homebrew** when prompted. This installs everything listed in `brew_installs/*.txt`.
+   The `backup_brew.sh` script presents a simple menu so you can back up your current setup, restore packages from the provided lists, or categorize your installed casks.
    ```sh
    chmod +x backup_brew.sh
    ./backup_brew.sh
