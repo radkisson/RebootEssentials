@@ -47,5 +47,3 @@ So, wanna give it a try? Here's what you need to do:
    chmod +x backup_brew.sh
    ./backup_brew.sh
    ```
-
-That's it! The script will take care of installing your packages and you'll be ready to go.
