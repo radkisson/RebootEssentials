@@ -31,5 +31,3 @@ So, wanna give it a try? Here's what you need to do:
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
 
-
-    
