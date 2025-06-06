@@ -135,8 +135,10 @@ process_chunk() {
 
     echo "$selected_categories"  # Debugging line
 
-    # Split the response into an array
-    IFS=',' read -r -a categories_array <<< "$selected_categories"
+    # Split the response into an array using newlines as separators
+    # The model returns each "cask, category" pair on its own line, so using
+    # mapfile simplifies parsing and preserves categories with spaces.
+    mapfile -t categories_array <<< "$selected_categories"
 
     # Append casks to the categorized casks CSV file
     for i in "${!casks[@]}"; do
